@@ -1907,4 +1907,255 @@
 }
 </script>
 
+<div class="cta-buttons-container">
+    <a href="https://buy.stripe.com/5kA6oMfzK9D15KE6pL" target="_blank" rel="noopener nofollow" class="cta-button" data-tracking-label="PopupVictory" aria-label="Victory fogyókúrás kapszulák megrendelése a felugró ablakból">
+        <span style="color:#000; text-shadow:0 0 5px rgba(255,255,255,0.8), 0 0 10px rgba(255,255,255,0.6), 0 0 15px rgba(255,255,255,0.4); animation:neon-flicker 1.5s infinite alternate;">Rendelje meg most a gyors fogyáshoz szánt "Victory" kapszulákat</span>
+    </a>
+    <a href="https://buy.stripe.com/14kdRe0EQ4iH1uoaFa" target="_blank" rel="noopener nofollow" class="cta-button" data-tracking-label="PopupVictory" aria-label="6€-os emailes jóslat megrendelése a felugró ablakból">
+        <span style="color:#000; text-shadow:0 0 5px rgba(255,255,255,0.8), 0 0 10px rgba(255,255,255,0.6), 0 0 15px rgba(255,255,255,0.4); animation:neon-flicker 1.5s infinite alternate;">1 kérdéses jóslat emailben - 6,00€</span>
+    </a>
+    <button class="popup-close-button" id="closePopup" aria-label="Felugró ablak bezárása">Bezárás</button>
+</div>
+</div>
+
+<!-- Footer -->
+<footer role="contentinfo">
+    <p>©<span id="footer-year"></span> ClairvoyanceMedium.com – Minden jog fenntartva - Ingyenes és világszerte 48 órán belüli szállítás - Biztonságos fizetés</p>
+    <p>A bankszámlakivonatán nem jelenik meg a "jóslás" vagy a "fogyás" kifejezés. Teljes diszkréció.</p>
+    <p>
+        <a href="mailto:contact.clairvoyancemedium@gmail.com?subject=Információkérése" rel="noopener" onclick="gtag('event', 'footer_link_click', { 'link_name': 'contact' });" aria-label="Ügyfélszolgálat elérése emailben">Kapcsolat</a> | 
+        <a href="https://www.clairvoyancemedium.com/Conditions-Generales-des-Ventes-et-d-Utilisation-ccsaaaaaa.asp" target="_blank" rel="noopener" onclick="gtag('event', 'footer_link_click', { 'link_name': 'cgv' });" aria-label="Általános értékesítési és felhasználási feltétek megtekintése">Általános értékesítési feltételek</a> | 
+    </p>
+</footer>
+
+</script nonce="xai-ultra2025">
+
+<!-- Scripts JavaScript -->
+<script nonce="xai-ultra2025">
+    // Dinamikus év kezelése
+    const currentYear = new Date().getFullYear();
+    document.querySelectorAll('#header-year, #header-title-year, #hero-year, #urgency-year, #minceur-urgency-year, #programme-urgency-year, #spiritual-urgency-year, #footer-year').forEach(el => el.textContent = currentYear);
+
+    // Elhagyási felugró ablak kezelése (minden eszköz, minden látogatás, 12s kezdeti, 90s után újra megjelenik)
+    const youtubePopup = document.getElementById('youtubePopup');
+    const closePopup = document.getElementById('closePopup');
+
+    function showPopup() {
+        setTimeout(() => {
+            // Elhagyási felugró elrejtése a konfliktusok elkerülése érdekében
+            document.querySelector('.exit-intent-popup')?.classList.remove('active');
+            youtubePopup.classList.add('active');
+            youtubePopup.setAttribute('aria-hidden', 'false');
+            document.getElementById('youtube-popup-heading').focus();
+        }, 12000);
+    }
+
+    closePopup.addEventListener('click', () => {
+        youtubePopup.classList.remove('active');
+        youtubePopup.setAttribute('aria-hidden', 'true');
+        // Felugró ablak újra megjelenítése 90 másodperc után
+        setTimeout(showPopup, 140000);
+    });
+
+    // Bezárás Escape billentyűvel
+    youtubePopup.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            youtubePopup.classList.remove('active');
+            youtubePopup.setAttribute('aria-hidden', 'true');
+            setTimeout(showPopup, 140000);
+        }
+    });
+
+    window.addEventListener('load', showPopup);
+
+    // Karuszel kezelése
+    const carousels = document.querySelectorAll('.carousel');
+    carousels.forEach(carousel => {
+        const inner = carousel.querySelector('.carousel-inner');
+        const items = carousel.querySelectorAll('.carousel-item');
+        const prevBtn = carousel.querySelector('.carousel-prev');
+        const nextBtn = carousel.querySelector('.carousel-next');
+        let currentIndex = 0;
+
+        function updateCarousel() {
+            items.forEach((item, index) => {
+                item.classList.toggle('active', index === currentIndex);
+                item.setAttribute('aria-hidden', index !== currentIndex);
+            });
+            prevBtn.disabled = currentIndex === 0;
+            nextBtn.disabled = currentIndex === items.length - 1;
+        }
+
+        prevBtn.addEventListener('click', () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateCarousel();
+            }
+        });
+
+        nextBtn.addEventListener('click', () => {
+            if (currentIndex < items.length - 1) {
+                currentIndex++;
+                updateCarousel();
+            }
+        });
+
+        updateCarousel();
+    });
+
+    // "Tovább olvasom" gombok kezelése
+    const readMoreButtons = document.querySelectorAll('.read-more-btn');
+    readMoreButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const content = btn.nextElementSibling;
+            content.style.display = content.style.display === 'block' ? 'none' : 'block';
+            btn.textContent = content.style.display === 'block' ? 'Összecsukás' : 'Tovább olvasom';
+        });
+    });
+
+    // BMI-kalkulátor kezelése
+    const imcForm = document.getElementById('imc-form');
+    const heightInput = document.getElementById('height');
+    const weightInput = document.getElementById('weight');
+    const imcRecommendation = document.getElementById('imc-recommendation');
+    const imcChart = document.getElementById('imc-chart').getContext('2d');
+    let chartInstance = null;
+
+    function validateInput(input, min, max, errorElement) {
+        const value = parseFloat(input.value);
+        if (isNaN(value) || value < min || value > max) {
+            errorElement.style.display = 'block';
+            return false;
+        }
+        errorElement.style.display = 'none';
+        return true;
+    }
+
+    imcForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const heightValid = validateInput(heightInput, 100, 250, document.getElementById('height-error'));
+        const weightValid = validateInput(weightInput, 30, 300, document.getElementById('weight-error'));
+
+        if (heightValid && weightValid) {
+            const height = parseFloat(heightInput.value) / 100;
+            const weight = parseFloat(weightInput.value);
+            const imc = (weight / (height * height)).toFixed(1);
+
+            let category, recommendation, posology;
+            if (imc < 18.5) {
+                category = 'Sovány testsúly';
+                recommendation = 'Az Ön BMI-je sovány testsúlyt jelez. Forduljon szakemberhez egy személyre szabott tervért.';
+                posology = '';
+            } else if (imc < 25) {
+                category = 'Normál testsúly';
+                recommendation = 'Az Ön BMI-je ideális. Tartsa meg testsúlyát kiegyensúlyozott táplálkozással, amelyet 4 Victory fogyókúrás kapszulával egészítsen ki a "büfénapokon". Reggel/este 2 kapszula.';
+                posology = '';
+            } else if (imc < 30) {
+                category = 'Túlsúly';
+                recommendation = 'Ön túlsúlyos. Próbálja ki a <a href="#minceur">Victory kapszulákat</a> a természetes és gyors fogyáshoz.';
+                posology = 'Adagolás: napi 2 Victory kapszula (reggel/du./este) egy pohár vízzel. Azaz napi 6 darab, 3 hónapig, hogy tökéletesen karcsú testet kapjon.';
+            } else {
+                category = 'Elhízás';
+                recommendation = 'Az Ön BMI-je elhízást jelez. A <a href="#programme-personnalise">személyre szabott Victory program</a> ideális Önnek a Victory fogyókúrás kapszulákkal kombinálva';
+                posology = 'Adagolás: napi 2 Victory kapszula minden étkezéshez, kombinálva a személyre szabott Victory programmal. Azaz napi 6 kapszula, 4 hónapig, hogy elérje ideális testsúlyát.';
+            }
+
+            imcRecommendation.innerHTML = `
+                <p>Az Ön BMI-je: <strong>${imc}</strong> (${category})</p>
+                <p>${recommendation}</p>
+                <p>${posology}</p>
+            `;
+
+            if (chartInstance) chartInstance.destroy();
+            chartInstance = new Chart(imcChart, {
+                type: 'bar',
+                data: {
+                    labels: ['Az Ön BMI-je', 'Normál BMI'],
+                    datasets: [{
+                        label: 'BMI',
+                        data: [imc, 22],
+                        backgroundColor: ['#FF69B4', '#87CEEB'],
+                        borderColor: ['#fff', '#fff'],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: { beginAtZero: true, max: 40 },
+                        x: { ticks: { color: '#fff' } }
+                    },
+                    plugins: { legend: { labels: { color: '#fff' } } }
+                }
+            });
+        }
+    });
+
+    // Hang gombok kezelése
+    const audioButtons = document.querySelectorAll('.audio-button');
+    let currentUtterance = null;
+
+    audioButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const textIds = button.dataset.textId.split(',');
+            const texts = textIds.map(id => {
+                const elements = document.querySelectorAll(`#${id},.${id},[id*="${id}"]`);
+                return Array.from(elements).map(el => el.textContent.trim()).join(' ');
+            }).join(' ');
+
+            if (button.classList.contains('play-button')) {
+                if (currentUtterance) {
+                    speechSynthesis.cancel();
+                }
+                currentUtterance = new SpeechSynthesisUtterance(texts);
+                currentUtterance.lang = 'hu-HU';
+                currentUtterance.rate = 1;
+                currentUtterance.pitch = 1;
+                speechSynthesis.speak(currentUtterance);
+
+                button.style.display = 'none';
+                button.nextElementSibling.style.display = 'inline-flex';
+                button.nextElementSibling.classList.add('playing');
+            } else {
+                speechSynthesis.cancel();
+                button.style.display = 'none';
+                button.previousElementSibling.style.display = 'inline-flex';
+                button.classList.remove('playing');
+            }
+        });
+    });
+
+    // Némítás gomb kezelése a videóhoz
+    const muteToggle = document.querySelector('.mute-toggle');
+    const videoIframe = document.querySelector('.video-container iframe');
+    muteToggle.addEventListener('click', () => {
+        const isMuted = muteToggle.textContent.includes('Bekapcsolás');
+        muteToggle.textContent = isMuted ? 'Hang kikapcsolása' : 'Hang bekapcsolása';
+        videoIframe.contentWindow.postMessage(JSON.stringify({
+            event: 'command',
+            func: isMuted ? 'unMute' : 'mute'
+        }), '*');
+    });
+
+    // Google fordító kezelése
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+            pageLanguage: 'hu',
+            includedLanguages: 'af,ar,bg,bn,bs,cs,da,de,el,en,es,et,eu,fa,fi,fr,ga,gl,he,hi,hr,hu,hy,id,is,it,ja,ka,km,ko,lo,lt,lv,mk,ml,ms,mt,my,nl,no,pl,pt,ro,ru,sk,sl,sr,sv,sw,ta,te,th,tl,tr,uk,ur,vi,zh-CN,zh-TW,zu',
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+            autoDisplay: false
+        }, 'google_translate_element');
+    }
+
+    // Videóhibák kezelése
+    videoIframe.addEventListener('error', () => {
+        document.getElementById('video-error').style.display = 'block';
+    });
+
+    // Web Vitals
+    webVitals.getCLS((metric) => console.log('CLS:', metric.value));
+    webVitals.getFID((metric) => console.log('FID:', metric.value));
+    webVitals.getLCP((metric) => console.log('LCP:', metric.value));
+</script>
+</body>
+</html>
 
