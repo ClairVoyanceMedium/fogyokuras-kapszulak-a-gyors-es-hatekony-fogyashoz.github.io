@@ -1,104 +1,237 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
         xmlns:video="http://www.google.com/schemas/sitemap-video/1.1"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
-        xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0"
-        xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-    <!-- 🔥 Page d'accueil (Priorité maximale) -->
-    <url>
-        <loc>https://clairvoyancemedium.github.io/Comment-retrouver-l-amour-rapidement.github.io/</loc>
-        <lastmod>2025-02-17</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>1.0</priority>
-        <image:image>
-            <image:loc>https://clairvoyancemedium.github.io/images/homepage-main.jpg</image:loc>
-            <image:title>Retrouver l'Amour Rapidement</image:title>
-            <image:caption>Techniques puissantes pour attirer et garder l'amour.</image:caption>
-        </image:image>
-    </url>
-
-    <!-- 🔍 Pages principales -->
-    <url>
-        <loc>https://clairvoyancemedium.github.io/Comment-retrouver-l-amour-rapidement.github.io/rituels-amour/</loc>
-        <lastmod>2025-02-15</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-        <image:image>
-            <image:loc>https://clairvoyancemedium.github.io/images/rituels-amour.jpg</image:loc>
-            <image:title>Rituels d'Amour Puissants</image:title>
-            <image:caption>Découvrez comment les rituels d’amour peuvent renforcer vos relations.</image:caption>
-        </image:image>
-    </url>
-
-    <url>
-        <loc>https://clairvoyancemedium.github.io/Comment-retrouver-l-amour-rapidement.github.io/voyance-email/</loc>
-        <lastmod>2025-02-15</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-        <image:image>
-            <image:loc>https://clairvoyancemedium.github.io/images/voyance-email.jpg</image:loc>
-            <image:title>Voyance par E-mail</image:title>
-            <image:caption>Posez vos questions à un voyant expérimenté par e-mail.</image:caption>
-        </image:image>
-    </url>
-
-    <!-- 🎥 Contenu Vidéo (avec ID réel de la vidéo) -->
-    <url>
-        <loc>https://clairvoyancemedium.github.io/Comment-retrouver-l-amour-rapidement.github.io/videos/comment-seduire-vite/</loc>
-        <lastmod>2025-02-10</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-        <video:video>
-            <video:player_loc>https://www.youtube.com/watch?v=ABCD1234EFG</video:player_loc>
-            <video:thumbnail_loc>https://clairvoyancemedium.github.io/images/video-thumbnail.jpg</video:thumbnail_loc>
-            <video:title>Comment séduire rapidement</video:title>
-            <video:description>Découvrez les meilleures techniques pour séduire efficacement.</video:description>
-        </video:video>
-    </url>
-
-    <!-- 📰 Articles Google News -->
-    <url>
-        <loc>https://clairvoyancemedium.github.io/Comment-retrouver-l-amour-rapidement.github.io/news/nouvelle-technique-de-seduction/</loc>
-        <lastmod>2025-02-13</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.9</priority>
-        <news:news>
-            <news:publication>
-                <news:name>Voyance & Amour News</news:name>
-                <news:language>fr</news:language>
-            </news:publication>
-            <news:publication_date>2025-02-13</news:publication_date>
-            <news:title>Nouvelle Technique de Séduction Révélée</news:title>
-            <news:keywords>séduction, amour, relation</news:keywords>
-        </news:news>
-    </url>
-
-    <!-- 📱 Page optimisée pour mobile -->
-    <url>
-        <loc>https://clairvoyancemedium.github.io/Comment-retrouver-l-amour-rapidement.github.io/mobile/</loc>
-        <lastmod>2025-02-17</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.9</priority>
-        <mobile:mobile/>
-    </url>
-
-    <!-- 📜 Pages légales -->
-    <url>
-        <loc>https://clairvoyancemedium.github.io/Comment-retrouver-l-amour-rapidement.github.io/mentions-legales/</loc>
-        <lastmod>2025-01-10</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.5</priority>
-    </url>
-
-    <url>
-        <loc>https://clairvoyancemedium.github.io/Comment-retrouver-l-amour-rapidement.github.io/cgv/</loc>
-        <lastmod>2025-01-10</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.5</priority>
-    </url>
-
+        xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0">
+  <!-- Magyar oldal (maximális prioritás) -->
+  <url>
+    <loc>https://clairvoyancemedium.github.io/fogyokuras-kapszulak-a-gyors-es-hatekony-fogyashoz.github.io/hu/</loc>
+    <lastmod>2025-05-28T00:56:00Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <mobile:mobile/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://clairvoyancemedium.github.io/fogyokuras-kapszulak-a-gyors-es-hatekony-fogyashoz.github.io/hu/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://clairvoyancemedium.github.io/fogyokuras-kapszulak-a-gyors-es-hatekony-fogyashoz.github.io/en/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://clairvoyancemedium.github.io/fogyokuras-kapszulak-a-gyors-es-hatekony-fogyashoz.github.io/de/" />
+    <image:image>
+      <image:loc>https://i.imgur.com/x9jJPra.jpg</image:loc>
+      <image:title>Gyors Fogyást Segítő Kapszulák</image:title>
+      <image:caption>Hatékony fogyókúra kapszulák magyar nyelven</image:caption>
+      <image:geo_location>Hungary</image:geo_location>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/Dj-pfiIzB44/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Fogyás gyorsan és egészségesen kapszulákkal</video:title>
+      <video:description>Fedezd fel a gyors fogyás titkait hatékony kapszuláinkkal</video:description>
+      <video:content_loc>https://www.youtube.com/shorts/Dj-pfiIzB44</video:content_loc>
+      <video:publication_date>2025-05-27</video:publication_date>
+      <video:duration>60</video:duration>
+      <video:view_count>10000</video:view_count>
+      <video:category>Egészség</video:category>
+      <video:tag>fogyás</video:tag>
+      <video:tag>fogyókúra</video:tag>
+      <video:tag>kapszula</video:tag>
+      <video:author>Gyors Fogyás Kapszula Csapat</video:author>
+      <video:license>https://www.clairvoyancemedium.com/Conditions-Generales-des-Ventes-et-d-Utilisation-ccsaaaaaa.asp</video:license>
+      <video:rating>5.0</video:rating>
+    </video:video>
+  </url>
+  <!-- Kezdőlap -->
+  <url>
+    <loc>https://clairvoyancemedium.github.io/fogyokuras-kapszulak-a-gyors-es-hatekony-fogyashoz.github.io/</loc>
+    <lastmod>2025-05-28T00:56:00Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.95</priority>
+    <mobile:mobile/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://clairvoyancemedium.github.io/fogyokuras-kapszulak-a-gyors-es-hatekony-fogyashoz.github.io/hu/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://clairvoyancemedium.github.io/fogyokuras-kapszulak-a-gyors-es-hatekony-fogyashoz.github.io/en/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://clairvoyancemedium.github.io/fogyokuras-kapszulak-a-gyors-es-hatekony-fogyashoz.github.io/de/" />
+    <image:image>
+      <image:loc>https://i.imgur.com/x9jJPra.jpg</image:loc>
+      <image:title>Fogyókúra Kapszulák - Gyors és Biztonságos Fogyás</image:title>
+      <image:caption>Változtasd meg az életed hatékony fogyókúra kapszuláinkkal</image:caption>
+      <image:geo_location>Global</image:geo_location>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/Dj-pfiIzB44/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Fogyás gyorsan és egészségesen</video:title>
+      <video:description>Ismerd meg a hatékony fogyás titkait kapszuláink segítségével</video:description>
+      <video:content_loc>https://www.youtube.com/shorts/Dj-pfiIzB44</video:content_loc>
+      <video:publication_date>2025-05-27</video:publication_date>
+      <video:duration>60</video:duration>
+      <video:view_count>10000</video:view_count>
+      <video:category>Egészség</video:category>
+      <video:tag>fogyás</video:tag>
+      <video:tag>fogyókúra</video:tag>
+      <video:author>Gyors Fogyás Kapszula Csapat</video:author>
+      <video:license>https://www.clairvoyancemedium.com/Conditions-Generales-des-Ventes-et-d-Utilisation-ccsaaaaaa.asp</video:license>
+      <video:rating>5.0</video:rating>
+    </video:video>
+  </url>
+  <!-- Angol oldal (USA) -->
+  <url>
+    <loc>https://clairvoyancemedium.github.io/fogyokuras-kapszulak-a-gyors-es-hatekony-fogyashoz.github.io/en/</loc>
+    <lastmod>2025-05-28T00:56:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <mobile:mobile/>
+    <image:image>
+      <image:loc>https://i.imgur.com/x9jJPra.jpg</image:loc>
+      <image:title>Fast Weight Loss Capsules</image:title>
+      <image:caption>Effective slimming solutions with capsules</image:caption>
+      <image:geo_location>United States</image:geo_location>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/Dj-pfiIzB44/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Lose Weight Fast with Our Capsules</video:title>
+      <video:description>Discover the secrets of effective weight loss with our capsules</video:description>
+      <video:content_loc>https://www.youtube.com/shorts/Dj-pfiIzB44</video:content_loc>
+      <video:publication_date>2025-05-27</video:publication_date>
+      <video:duration>60</video:duration>
+      <video:view_count>10000</video:view_count>
+      <video:category>Health</video:category>
+      <video:tag>weight loss</video:tag>
+      <video:tag>capsules</video:tag>
+      <video:author>Fast Weight Loss Capsules Team</video:author>
+      <video:license>https://www.clairvoyancemedium.com/Conditions-Generales-des-Ventes-et-d-Utilisation-ccsaaaaaa.asp</video:license>
+      <video:rating>5.0</video:rating>
+    </video:video>
+  </url>
+  <!-- Német oldal -->
+  <url>
+    <loc>https://clairvoyancemedium.github.io/fogyokuras-kapszulak-a-gyors-es-hatekony-fogyashoz.github.io/de/</loc>
+    <lastmod>2025-05-28T00:56:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <mobile:mobile/>
+    <image:image>
+      <image:loc>https://i.imgur.com/x9jJPra.jpg</image:loc>
+      <image:title>Schnelle Abnehmkapseln</image:title>
+      <image:caption>Effektive Lösungen zur Gewichtsabnahme</image:caption>
+      <image:geo_location>Germany</image:geo_location>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/Dj-pfiIzB44/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Abnehmen mit unseren Kapseln</video:title>
+      <video:description>Entdecken Sie die Geheimnisse der effektiven Gewichtsabnahme</video:description>
+      <video:content_loc>https://www.youtube.com/shorts/Dj-pfiIzB44</video:content_loc>
+      <video:publication_date>2025-05-27</video:publication_date>
+      <video:duration>60</video:duration>
+      <video:view_count>10000</video:view_count>
+      <video:category>Gesundheit</video:category>
+      <video:tag>Abnehmen</video:tag>
+      <video:tag>Kapseln</video:tag>
+      <video:author>Schnelle Abnehmkapseln Team</video:author>
+      <video:license>https://www.clairvoyancemedium.com/Conditions-Generales-des-Ventes-et-d-Utilisation-ccsaaaaaa.asp</video:license>
+      <video:rating>5.0</video:rating>
+    </video:video>
+  </url>
+  <!-- Blog (általános publikációs szekció) -->
+  <url>
+    <loc>https://clairvoyancemedium.github.io/fogyokuras-kapszulak-a-gyors-es-hatekony-fogyashoz.github.io/blog/</loc>
+    <lastmod>2025-05-28T00:56:00Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.85</priority>
+    <mobile:mobile/>
+    <image:image>
+      <image:loc>https://i.imgur.com/H69KvL6.png</image:loc>
+      <image:title>Egészséges Életmód Blog</image:title>
+      <image:caption>Fogyásról és egészséges életmódról szóló cikkek</image:caption>
+      <image:geo_location>Hungary</image:geo_location>
+    </image:image>
+  </url>
+  <!-- Sajtóközlemény -->
+  <url>
+    <loc>https://clairvoyancemedium.github.io/fogyokuras-kapszulak-a-gyors-es-hatekony-fogyashoz.github.io/blog/sajtokozlemeny/</loc>
+    <lastmod>2025-05-28T00:56:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <mobile:mobile/>
+    <news:news>
+      <news:publication>
+        <news:name>Gyors Fogyás Kapszula</news:name>
+        <news:language>hu</news:language>
+      </news:publication>
+      <news:publication_date>2025-05-27</news:publication_date>
+      <news:title>Új generációs fogyókúra kapszulák bemutatása</news:title>
+      <news:keywords>fogyás, fogyókúra, kapszula, egészség, táplálékkiegészítő</news:keywords>
+      <news:genres>PressRelease</news:genres>
+    </news:news>
+    <image:image>
+      <image:loc>https://i.imgur.com/H69KvL6.png</image:loc>
+      <image:title>Sajtóközlemény képe</image:title>
+      <image:caption>Új termékünk bemutatása</image:caption>
+      <image:geo_location>Hungary</image:geo_location>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/Dj-pfiIzB44/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Új fogyókúra kapszulák bemutató</video:title>
+      <video:description>Ismerd meg forradalmi fogyókúra kapszuláinkat</video:description>
+      <video:content_loc>https://www.youtube.com/shorts/Dj-pfiIzB44</video:content_loc>
+      <video:publication_date>2025-05-27</video:publication_date>
+      <video:duration>60</video:duration>
+      <video:view_count>10000</video:view_count>
+      <video:category>Egészség</video:category>
+      <video:tag>fogyás</video:tag>
+      <video:tag>kapszula</video:tag>
+      <video:author>Gyors Fogyás Kapszula Csapat</video:author>
+      <video:license>https://www.clairvoyancemedium.com/Conditions-Generales-des-Ventes-et-d-Utilisation-ccsaaaaaa.asp</video:license>
+      <video:rating>5.0</video:rating>
+    </video:video>
+  </url>
+  <!-- Konkrét blogbejegyzés -->
+  <url>
+    <loc>https://clairvoyancemedium.github.io/fogyokuras-kapszulak-a-gyors-es-hatekony-fogyashoz.github.io/blog/uj-blogbejegyzes/</loc>
+    <lastmod>2025-05-28T00:56:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <mobile:mobile/>
+    <news:news>
+      <news:publication>
+        <news:name>Gyors Fogyás Kapszula</news:name>
+        <news:language>hu</news:language>
+      </news:publication>
+      <news:publication_date>2025-05-27</news:publication_date>
+      <news:title>Hatékony fogyás kapszulákkal - Tippek és trükkök</news:title>
+      <news:keywords>fogyás, fogyókúra, kapszula, egészség, táplálékkiegészítő</news:keywords>
+      <news:genres>Blog</news:genres>
+    </news:news>
+    <image:image>
+      <image:loc>https://i.imgur.com/H69KvL6.png</image:loc>
+      <image:title>Blogbejegyzés képe</image:title>
+      <image:caption>Tanuld meg a hatékony fogyás titkait</image:caption>
+      <image:geo_location>Hungary</image:geo_location>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/Dj-pfiIzB44/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Fogyás mesterfokon</video:title>
+      <video:description>Tanuld meg a hatékony fogyás legújabb módszereit</video:description>
+      <video:content_loc>https://www.youtube.com/shorts/Dj-pfiIzB44</video:content_loc>
+      <video:publication_date>2025-05-27</video:publication_date>
+      <video:duration>60</video:duration>
+      <video:view_count>10000</video:view_count>
+      <video:category>Egészség</video:category>
+      <video:tag>fogyás</video:tag>
+      <video:tag>kapszula</video:tag>
+      <video:author>Gyors Fogyás Kapszula Csapat</video:author>
+      <video:license>https://www.clairvoyancemedium.com/Conditions-Generales-des-Ventes-et-d-Utilisation-ccsaaaaaa.asp</video:license>
+      <video:rating>5.0</video:rating>
+    </video:video>
+  </url>
+  <!-- Cikkek szekció (részletes tartalmak) -->
+  <url>
+    <loc>https://clairvoyancemedium.github.io/fogyokuras-kapszulak-a-gyors-es-hatekony-fogyashoz.github.io/cikkek/</loc>
+    <lastmod>2025-05-28T00:56:00Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.85</priority>
+    <mobile:mobile/>
+    <image:image>
+      <image:loc>https://i.imgur.com/H69KvL6.png</image:loc>
+      <image:title>Fogyásról szóló cikkek</image:title>
+      <image:caption>Részletes betekintés a hatékony fogyás titkaiba</image:caption>
+      <image:geo_location>Hungary</image:geo_location>
+    </image:image>
+  </url>
 </urlset>
