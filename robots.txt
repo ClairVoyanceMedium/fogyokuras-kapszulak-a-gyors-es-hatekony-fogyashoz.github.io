@@ -1,42 +1,283 @@
-# Indique aux robots que toutes les pages peuvent être explorées, sauf restrictions spécifiées
+# robots.txt v3.5 - 2025-05-28
+# Optimalizálva a https://clairvoyancemedium.github.io/fogyokuras-kapszulak-a-gyors-es-hatekony-fogyashoz.github.io/ számára
+# Célok: Globális SEO, gyakori crawlezés, IA/hangasszisztensek/szociális médiák támogatása, többnyelvűség, maximális védelem
+
+# --- Általános irányelvek minden legitim crawler számára ---
 User-agent: *
-Disallow: /admin/
-Disallow: /tmp/
-Disallow: /private/
+Allow: /
+Allow: /[a-z]{2}/  # Többnyelvű oldalak (/hu/, /en/, /es/, stb.)
+Allow: /feltetelek/     # Nyilvános ÁSZF
+Allow: /betutipusok/     # Betűtípusok megjelenítéshez
+Allow: /kepek/    # Képek indexeléshez
+Allow: /js/        # Interaktív szkriptek
+Allow: /css/       # Mobile-first CSS
+Allow: /*.webp$    # WebP képek
+Allow: /*.jpg$     # JPG képek
+Allow: /*.png$     # PNG képek
+Allow: /*.gif$     # GIF képek
+Allow: /*.js$      # JavaScript szkriptek
+Allow: /*.css$     # CSS fájlok
+Disallow: /csp-jelentes-vegpont/  # CSP védelem
+Disallow: /kapcsolat/             # Kapcsolati oldal
+Disallow: /adatvedelem/             # Adatvédelmi irányelvek
+Disallow: /fizetes/            # Tranzakciós útvonalak
+Disallow: /kereses/              # Keresési oldalak
+Disallow: /api/                 # API végpontok
+Disallow: /teszt/                # Teszt könyvtárak
+Disallow: /elokeszites/             # Előkészítő környezetek
+Clean-param: utm_source&utm_medium&utm_campaign&lang&session_id  # Hasznos paraméterek engedélyezése
 
-# Bloquer des URL avec paramètres inutiles pour l'indexation
-Disallow: /*?debug=true
-Disallow: /*?preview=true
-
-# Permettre les fichiers nécessaires au bon affichage et fonctionnement
-Allow: /css/
-Allow: /js/
-Allow: /images/
-
-# Référencement des ressources multimédias
-Allow: *.png
-Allow: *.jpg
-Allow: *.webp
-Allow: *.css
-Allow: *.js
-
-# Fournir le chemin du fichier sitemap pour une meilleure indexation
-Sitemap: https://www.clairvoyancemedium.com/sitemap.xml
-
-# Autorisation pour les robots Google et Bing pour maximiser les campagnes publicitaires
+# --- Irányelvek Googlebot számára (Google, Google Assistant) ---
 User-agent: Googlebot
+Crawl-delay: 1
+Allow: /blog/      # Gazdag tartalom SEO-hoz
+Allow: /cikk/   # Cikkek részletekhez
+Clean-param: utm_source&utm_medium&utm_campaign&lang
+Disallow: /csp-jelentes-vegpont/
+Disallow: /kapcsolat/
+Disallow: /adatvedelem/
+Disallow: /fizetes/
+
+# --- Irányelvek Googlebot-Image számára ---
+User-agent: Googlebot-Image
+Allow: /kepek/
+Allow: /*.webp$
+Allow: /*.jpg$
+Allow: /*.png$
+Allow: /*.gif$
+Disallow: /favicon_optimalizalt.webp  # Favicon elkerülése
+
+# --- Irányelvek Googlebot-Video számára ---
+User-agent: Googlebot-Video
+Crawl-delay: 1
 Allow: /
-User-agent: AdsBot-Google
-Allow: /
+Allow: /[a-z]{2}/
+Disallow: /csp-jelentes-vegpont/
+Disallow: /kapcsolat/
+Disallow: /adatvedelem/
+Disallow: /fizetes/
+
+# --- Irányelvek Bingbot számára (Bing, Cortana) ---
 User-agent: Bingbot
+Crawl-delay: 2
+Allow: /blog/
+Allow: /cikk/
+Clean-param: utm_source&utm_medium&utm_campaign&lang
+Disallow: /csp-jelentes-vegpont/
+Disallow: /kapcsolat/
+Disallow: /adatvedelem/
+Disallow: /fizetes/
+
+# --- Irányelvek Yandex számára (Yandex, Alice) ---
+User-agent: Yandex
+Crawl-delay: 3
+Allow: /blog/
+Allow: /cikk/
+Clean-param: utm_source&utm_medium&utm_campaign&lang&session_id
+Disallow: /csp-jelentes-vegpont/
+Disallow: /kapcsolat/
+Disallow: /adatvedelem/
+Disallow: /fizetes/
+
+# --- Irányelvek Baiduspider számára (Kína) ---
+User-agent: Baiduspider
+Crawl-delay: 3
+Allow: /zh/        # Kínai priorizálás
+Allow: /blog/
+Allow: /cikk/
+Clean-param: lang
+Disallow: /csp-jelentes-vegpont/
+Disallow: /kapcsolat/
+Disallow: /adatvedelem/
+Disallow: /fizetes/
+Disallow: /api/
+Disallow: /teszt/
+Disallow: /elokeszites/
+
+# --- Irányelvek Sogou számára (Kína) ---
+User-agent: Sogou
+Crawl-delay: 4
+Allow: /zh/
+Allow: /blog/
+Allow: /cikk/
+Clean-param: lang
+Disallow: /csp-jelentes-vegpont/
+Disallow: /kapcsolat/
+Disallow: /adatvedelem/
+Disallow: /fizetes/
+Disallow: /api/
+Disallow: /teszt/
+Disallow: /elokeszites/
+
+# --- Irányelvek Applebot számára (Siri, Apple) ---
+User-agent: Applebot
+Crawl-delay: 2
+Allow: /blog/
+Allow: /cikk/
+Clean-param: utm_source&utm_medium&utm_campaign&lang
+Disallow: /csp-jelentes-vegpont/
+Disallow: /kapcsolat/
+Disallow: /adatvedelem/
+Disallow: /fizetes/
+
+# --- Irányelvek Amazonbot számára (Alexa, Amazon) ---
+User-agent: Amazonbot
+Crawl-delay: 3
+Allow: /blog/
+Allow: /cikk/
+Clean-param: utm_source&utm_medium&utm_campaign&lang
+Disallow: /csp-jelentes-vegpont/
+Disallow: /kapcsolat/
+Disallow: /adatvedelem/
+Disallow: /fizetes/
+
+# --- Irányelvek Naverbot számára (Japán/Korea) ---
+User-agent: Naverbot
+Crawl-delay: 3
+Allow: /ja/        # Japán priorizálás
+Allow: /ko/        # Koreai priorizálás
+Allow: /blog/
+Allow: /cikk/
+Clean-param: lang
+Disallow: /csp-jelentes-vegpont/
+Disallow: /kapcsolat/
+Disallow: /adatvedelem/
+Disallow: /fizetes/
+
+# --- Irányelvek SeznamBot számára (Csehország) ---
+User-agent: SeznamBot
+Crawl-delay: 3
+Allow: /cs/        # Cseh priorizálás
+Allow: /blog/
+Allow: /cikk/
+Clean-param: lang
+Disallow: /csp-jelentes-vegpont/
+Disallow: /kapcsolat/
+Disallow: /adatvedelem/
+Disallow: /fizetes/
+
+# --- Irányelvek Qwantify számára (Qwant, Európa) ---
+User-agent: Qwantify
+Crawl-delay: 4
+Allow: /fr/        # Francia priorizálás
+Allow: /blog/
+Allow: /cikk/
+Clean-param: lang
+Disallow: /csp-jelentes-vegpont/
+Disallow: /kapcsolat/
+Disallow: /adatvedelem/
+Disallow: /fizetes/
+
+# --- Irányelvek DuckDuckGoBot számára (Globális) ---
+User-agent: DuckDuckGoBot
+Crawl-delay: 2
 Allow: /
+Allow: /[a-z]{2}/
+Allow: /blog/
+Allow: /cikk/
+Clean-param: utm_source&utm_medium&utm_campaign&lang
+Disallow: /csp-jelentes-vegpont/
+Disallow: /kapcsolat/
+Disallow: /adatvedelem/
+Disallow: /fizetes/
 
-# Bloquer les robots nuisibles ou non désirés
-User-agent: BadBot
-Disallow: /
-User-agent: EvilScraper
+# --- Irányelvek JioSphere számára (India) ---
+User-agent: JioSphere
+Crawl-delay: 3
+Allow: /hi/        # Hindi priorizálás
+Allow: /blog/
+Allow: /cikk/
+Clean-param: lang
+Disallow: /csp-jelentes-vegpont/
+Disallow: /kapcsolat/
+Disallow: /adatvedelem/
+Disallow: /fizetes/
+
+# --- Irányelvek beszélgetős AI crawlerek számára ---
+User-agent: Grok
+User-agent: ChatGPT-User
+User-agent: GPTBot
+User-agent: openai-crawler
+User-agent: ClaudeBot
+User-agent: anthropic-ai
+User-agent: cohere-ai
+User-agent: PerplexityBot
+User-agent: CCBot
+User-agent: youbot
+User-agent: phindbot
+User-agent: GeminiBot  # Google AI
+Crawl-delay: 4
+Allow: /
+Allow: /[a-z]{2}/
+Allow: /blog/      # Beszélgetéses részletek
+Allow: /cikk/
+Allow: /kepek/
+Allow: /*.webp$
+Allow: /*.jpg$
+Allow: /*.png$
+Allow: /*.gif$
+Clean-param: utm_source&utm_medium&utm_campaign&lang
+Disallow: /csp-jelentes-vegpont/
+Disallow: /kapcsolat/
+Disallow: /adatvedelem/
+Disallow: /fizetes/
+Disallow: /api/
+Disallow: /teszt/
+Disallow: /elokeszites/
+
+# --- Irányelvek szociális média crawlerek számára ---
+User-agent: FacebookBot
+User-agent: Twitterbot
+User-agent: redditbot
+User-agent: TikTokBot  # Új szociális médiák
+Crawl-delay: 2
+Allow: /
+Allow: /[a-z]{2}/
+Allow: /blog/      # Közösségi előnézetek
+Allow: /cikk/
+Allow: /kepek/
+Allow: /*.webp$
+Allow: /*.jpg$
+Allow: /*.png$
+Allow: /*.gif$
+Clean-param: utm_source&utm_medium&utm_campaign&lang
+Disallow: /csp-jelentes-vegpont/
+Disallow: /kapcsolat/
+Disallow: /adatvedelem/
+Disallow: /fizetes/
+
+# --- Nemkívánatos crawlerek blokkolása ---
+User-agent: MJ12bot
+User-agent: AhrefsBot
+User-agent: PetalBot
+User-agent: DotBot
 Disallow: /
 
-# Empêcher l'exploration des fichiers sensibles
-Disallow: /config/
-Disallow: /backup/
+# --- SemrushBot engedélyezése SEO auditokhoz ---
+User-agent: SemrushBot
+Crawl-delay: 5
+Allow: /
+Allow: /[a-z]{2}/
+Allow: /blog/
+Allow: /cikk/
+Allow: /kepek/
+Allow: /*.webp$
+Allow: /*.jpg$
+Allow: /*.png$
+Allow: /*.gif$
+Clean-param: utm_source&utm_medium&utm_campaign&lang
+Disallow: /csp-jelentes-vegpont/
+Disallow: /kapcsolat/
+Disallow: /adatvedelem/
+Disallow: /fizetes/
+
+# --- Védelem ismeretlen crawlerek ellen ---
+User-agent: *
+Disallow: /  # Alapértelmezés szerint blokkolás, kivéve explicit engedélyezés
+
+# --- Crawl optimalizálás ---
+Crawl-delay: 1
+Request-rate: 1/4  # 1 kérés/4s gyors crawlezéshez
+
+# --- Sitemap index ---
+Sitemap: https://clairvoyancemedium.github.io/fogyokuras-kapszulak-a-gyors-es-hatekony-fogyashoz.github.io/sitemap-index.xml
